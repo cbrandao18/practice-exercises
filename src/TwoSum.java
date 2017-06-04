@@ -20,7 +20,7 @@ public class TwoSum {
             } else {
                 if (index2 == nums.length - 1 && index1 < nums.length){
                     index1 += 1;
-                    index2 = index1;
+                    index2 = index1 + 1;
                 } else {
                     index2 += 1;
                 }
