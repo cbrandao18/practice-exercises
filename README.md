@@ -5,7 +5,7 @@ Programming exercises to practice
 
 **Password Checker** - Check if a string fulfills all password requirements. 
 
-**Pig Latin** - Enter in a word and program translates to the Pig Latin version
+**Pig Latin** - Enter in a word and program translates to the Pig Latin version.
 
 **Pizza Orders** - Input a text file with multiple pizza orders. Separate text files hold prices for each size and toppings offered. Compute and display total price for each order.
 
