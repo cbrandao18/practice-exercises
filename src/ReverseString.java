@@ -21,6 +21,7 @@ public class ReverseString {
         System.out.println("Using manual reverse method ------------------");
         System.out.println("Enter a string you would like to be reversed: ");
         String str = in.nextLine();
+        in.close();
         System.out.println("Original string: " + str);
         String strReversed = reverseString(str);
         System.out.println("Reversed string: " + strReversed);
