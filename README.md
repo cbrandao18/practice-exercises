@@ -3,7 +3,9 @@ Programming exercises to practice
 
 **FizzBuzz** - A program that prints the numbers from 1 to 100. For multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
 
-**Password Checker** - Check if a string fulfills all password requirements. 
+**Palindrome Checker** - Check if a string entered by the user is a palindrome - it reads the same forwards and backwards.
+
+**Password Checker** - Check if a string entered by the user fulfills all password requirements. 
 
 **Pig Latin** - Enter in a word and program translates to the Pig Latin version.
 
