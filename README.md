@@ -15,6 +15,8 @@ Programming exercises to practice
 
 **Reverse String** - Create a method to reverse a string manually. Also, shows how to use given reverse method.
 
+**Roman Numeral** - Input a integer and output the Roman Numeral representation as a String.
+
 **Two Sum** - Given an array of integers, this program returns the indices of the two numbers such that they add up to a target value. It is assumed that each input would have one solution and the same element is not to be used twice. 
 
 **Vowel Count** - Enter in a string and the program counts the numbers of vowels and prints result to console. 
