@@ -83,12 +83,12 @@ public class RomanNumeral {
     }
 
     /**
-     * Takes a string consisting of Roman Numerals and convert to a number
+     * Takes a string consisting of correct Roman Numeral format and convert to a number
      *
      * @param string
      *      string of Roman Numerals to convert
      * @return
-     *      integer representing the value of the Roman Numeral string or 0 if invalid input
+     *      integer representing the value of the Roman Numeral string
      */
     private static int to_decimal(String string){
         /*
@@ -114,8 +114,6 @@ public class RomanNumeral {
 
         int num = 0; //number to return
         String token = ""; //the roman numeral token to convert to an integer
-        String prev = String.valueOf(string.charAt(0)); //store previous token to check number of repeats
-        String validRepeats = "IXCM";
 
         //String only holds one roman numeral. No need to check if it is a subtractive notation.
         if (string.length() == 1){
@@ -143,16 +141,6 @@ public class RomanNumeral {
                 i++;
             }
 
-            //Check if there is an invalid repeat (V, L, and D cannot be repeated)
-            if (prev.equals(token) && !validRepeats.contains(token) && token.length() == 1){
-                /*
-                 * An invalid roman numeral was entered.
-                 * Example: "VV" isn't a valid roman numeral because V is not a roman numeral that can be repeated
-                 */
-                return 0;
-            }
-            prev = token;
-
             //Get value of roman numeral from map and add to current number
             num += roman.get(token);
         }
@@ -173,12 +161,11 @@ public class RomanNumeral {
         scan = new Scanner(System.in);
         String str = scan.nextLine();
 
+
         int num = to_decimal(str);
-        if (num == 0){
-            System.out.println("Invalid Roman Numeral input.");
-        } else {
-            System.out.println(num);
-        }
+        System.out.println(num);
+
+        scan.close();
 
     }
 }
