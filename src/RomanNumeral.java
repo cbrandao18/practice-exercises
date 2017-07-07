@@ -28,6 +28,7 @@ public class RomanNumeral {
                 greatestKey = entry.getKey();
             }
         }
+
         return greatestKey;
     }
 
@@ -140,10 +141,10 @@ public class RomanNumeral {
                 token = String.valueOf(string.charAt(i));
                 i++;
             }
-
             //Get value of roman numeral from map and add to current number
             num += roman.get(token);
         }
+
         return num;
     }
 
@@ -160,7 +161,6 @@ public class RomanNumeral {
         System.out.print("Enter in a Roman Numeral to be converted into a number: ");
         scan = new Scanner(System.in);
         String str = scan.nextLine();
-
 
         int num = to_decimal(str);
         System.out.println(num);
