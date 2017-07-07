@@ -113,7 +113,6 @@ public class RomanNumeral {
         roman.put("M", 1000);
 
         int num = 0; //number to return
-        int repeat = 0; //keep track of how many times each roman numeral repeats to see if it is an invalid input
         String token = ""; //the roman numeral token to convert to an integer
         String prev = String.valueOf(string.charAt(0)); //store previous token to check number of repeats
         String validRepeats = "IXCM";
