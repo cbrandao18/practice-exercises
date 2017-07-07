@@ -88,7 +88,7 @@ public class RomanNumeral {
      * @param string
      *      string of Roman Numerals to convert
      * @return
-     *      integer representing the value of the Roman Numeral string
+     *      integer representing the value of the Roman Numeral string or 0 if invalid input
      */
     private static int to_decimal(String string){
         /*
@@ -112,8 +112,10 @@ public class RomanNumeral {
         roman.put("CM", 900);
         roman.put("M", 1000);
 
-        int num = 0;
+        int num = 0; //number to return
+        int repeat = 0; //keep track of how many times each roman numeral repeats to see if it is an invalid input
         String token = "";
+        String prev = String.valueOf(string.charAt(0));
         //String only holds one roman numeral. No need to check if it is a subtractive notation.
         if (string.length() == 1){
             token = String.valueOf(string.charAt(0));
@@ -133,11 +135,27 @@ public class RomanNumeral {
                     //Subtractive notation not found so get token of single roman numeral
                     token = String.valueOf(string.charAt(i));
                     i++;
+                    if (token.equals(prev)){
+                        repeat++;
+                        prev = token;
+                    }
                 }
             } else {
                 //Read last roman numeral in the string
                 token = String.valueOf(string.charAt(i));
                 i++;
+                if (token.equals(prev)){
+                    repeat++;
+                    prev = token;
+                }
+            }
+            if (repeat > 3){
+                /*
+                 * An invalid roman numeral was entered.
+                 * Example: "XXXX" isn't the accurate way to represent 40 based on the rule that a roman numeral cannot
+                 * be repeated more than 3 times.
+                 */
+                return 0;
             }
             //Get value of roman numeral from map and add to current number
             num += roman.get(token);
@@ -160,6 +178,11 @@ public class RomanNumeral {
         String str = scan.nextLine();
 
         int num = to_decimal(str);
-        System.out.println(num);
+        if (num == 0){
+            System.out.println("Invalid roman numeral input.");
+        } else {
+            System.out.println(num);
+        }
+
     }
 }
